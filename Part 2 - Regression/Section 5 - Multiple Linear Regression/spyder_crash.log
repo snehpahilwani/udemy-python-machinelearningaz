@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\snehc\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 3011, in main
+    mainwindow = run_spyder(app, options, args)
+  File "C:\Users\snehc\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 2923, in run_spyder
+    main.post_visible_setup()
+  File "C:\Users\snehc\Anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 1228, in post_visible_setup
+    self.editor.setup_open_files()
+  File "C:\Users\snehc\Anaconda3\lib\site-packages\spyder\plugins\editor.py", line 2636, in setup_open_files
+    self.load(filenames)
+  File "C:\Users\snehc\Anaconda3\lib\site-packages\spyder\plugins\editor.py", line 1885, in load
+    current_editor.set_breakpoints(load_breakpoints(filename))
+AttributeError: 'NoneType' object has no attribute 'set_breakpoints'
