@@ -65,7 +65,20 @@ test_set = test_datagen.flow_from_directory(
 
 classifier.fit_generator(
         training_set,
-        steps_per_epoch = 8000,
+        steps_per_epoch = 8000/32,
         nb_epoch=25,
         validation_data=test_set,
-        nb_val_samples=2000)
+        validation_steps=2000/32)
+
+# Making new predictions
+import numpy as np
+from keras.preprocessing import image
+test_image = image.load_img('200_s.gif', target_size = (64, 64))
+test_image = image.img_to_array(test_image)
+test_image = np.expand_dims(test_image, axis = 0)
+result = classifier.predict(test_image)
+training_set.class_indices
+if result[0][0] == 1:
+    prediction = 'dog'
+else:
+    prediction = 'cat'
